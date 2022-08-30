@@ -4,8 +4,8 @@
       <q-list v-if="results.barcodeResults.value.length>0" dense bordered separator padding class="rounded-borders">
         <q-item clickable v-ripple v-for="(result, index) in results.barcodeResults.value" :key="index">
           <q-item-section>
-            <q-item-label>{{ result }}</q-item-label>
-            <q-item-label caption>EAN</q-item-label>
+            <q-item-label>{{ result.barcodeText }}</q-item-label>
+            <q-item-label caption>{{ result.barcodeFormat }}</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
