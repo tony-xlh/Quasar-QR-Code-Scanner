@@ -3,16 +3,16 @@
     <div class="full">
       <q-list v-if="results.barcodeResults.value.length>0" dense bordered separator padding class="rounded-borders">
         <q-item clickable v-ripple v-for="(result, index) in results.barcodeResults.value" :key="index">
-        <q-item-section>
-          <q-item-label>{{ result }}</q-item-label>
-          <q-item-label caption>EAN</q-item-label>
-        </q-item-section>
-      </q-item>
-    </q-list>
+          <q-item-section>
+            <q-item-label>{{ result }}</q-item-label>
+            <q-item-label caption>EAN</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+      <q-page-sticky position="bottom-left" :offset="[18,18]">
+        <q-btn @click="goScan" fab icon="camera_alt" color="blue" />
+      </q-page-sticky>
     </div>
-   
-
-    
   </q-page>
 </template>
 
@@ -27,17 +27,16 @@ export default defineComponent({
   name: 'PageIndex',
   components: {},
   setup() {
-
     const router = useRouter();
     const results = useState(["barcodeResults"]);
     console.log("results");
     console.log(results.barcodeResults.value);
 
-
-    const click = async () => {
+    const goScan = async () => {
       await router.push("/scanner")
     }
-    return {click, results};
+
+    return {goScan, results};
   }
 });
 
