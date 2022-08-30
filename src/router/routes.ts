@@ -9,6 +9,11 @@ const routes: RouteConfig[] = [
     ]
   },
 
+  {
+    path: '/scanner',
+    component: () => import('pages/Scanner.vue')
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
