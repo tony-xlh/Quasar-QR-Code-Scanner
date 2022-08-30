@@ -25,6 +25,7 @@
     "@quasar/app": "^2.0.0"
   },
   "browserslist": [
+    "and_chr 58",
     "last 10 Chrome versions",
     "last 10 Firefox versions",
     "last 4 Edge versions",
