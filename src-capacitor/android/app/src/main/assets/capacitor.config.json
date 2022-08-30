@@ -3,5 +3,8 @@
   "appName": "Quasar QR Code Scanner",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www"
+  "webDir": "www",
+  "server": {
+    "url": "http://192.168.8.65:8080"
+  }
 }
