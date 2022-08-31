@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!initialized">Initializing...</div>
+  <div class="status" v-if="!initialized">Initializing...</div>
 </template>
 
 <script lang="ts" setup>
@@ -27,7 +27,7 @@ const handleRotation = (result:any, orientation: string, rotation:number) => {
      let y = result["y"+i];
      let rotatedX;
      let rotatedY;
-            
+
      switch (rotation) {
        case 0:
          rotatedX = x;
@@ -105,7 +105,7 @@ onMounted(async () => {
       }
     }
     await DBR.startScan();
-   
+
   }
 });
 onBeforeUnmount(() => {
@@ -128,4 +128,8 @@ watch(() => props.torchOn, (newVal, oldVal) => {
 </script>
 
 <style scoped>
+.status {
+  padding-top: env(safe-area-inset-top);
+}
+</style>
 </style>
