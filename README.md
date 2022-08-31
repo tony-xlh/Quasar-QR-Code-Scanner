@@ -1,6 +1,18 @@
 # Quasar QR Code Scanner (quasar-qrcode-scanner)
 
-A Quasar project which scans QR codes.
+A Quasar project which scans QR codes using [Dynamsoft Barcode Reader](https://www.dynamsoft.com/barcode-reader/overview/) with the [capacitor plugin](https://www.npmjs.com/package/capacitor-plugin-dynamsoft-barcode-reader).
+
+[Online demo](https://tiny-haupia-869a3e.netlify.app/)
+
+## Supported Platforms
+
+* Android
+* iOS
+* Web
+
+## Product License
+
+You can apply for your own license [here](https://www.dynamsoft.com/customer/license/trialLicense/?product=dbr) and update the 1-day license in `Scanner.vue`.
 
 ## Install the dependencies
 ```bash
