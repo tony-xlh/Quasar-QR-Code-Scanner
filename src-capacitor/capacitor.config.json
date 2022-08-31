@@ -1,7 +1,0 @@
-{
-  "appId": "com.xulihang.quasarqrcodescanner",
-  "appName": "Quasar QR Code Scanner",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}
