@@ -4,6 +4,8 @@ A Quasar project which scans QR codes using [Dynamsoft Barcode Reader](https://w
 
 [Online demo](https://tiny-haupia-869a3e.netlify.app/)
 
+The project is using Quasar v1 with composition API for compatibility.
+
 ## Supported Platforms
 
 * Android
