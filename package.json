@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@capacitor/android": "^4.1.0",
+    "@capacitor/app": "^4.0.1",
     "@capacitor/cli": "^4.1.0",
     "@capacitor/ios": "^4.1.0",
     "@quasar/extras": "^1.0.0",

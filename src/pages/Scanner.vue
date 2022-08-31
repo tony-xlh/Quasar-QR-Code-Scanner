@@ -12,11 +12,11 @@
 
 import QRCodeScanner from '../components/QRCodeScanner.vue';
 import { ScanResult } from 'capacitor-plugin-dynamsoft-barcode-reader';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import { createNamespacedHelpers } from 'vuex-composition-helpers';
 const { useMutations } = createNamespacedHelpers('barcodes');
 import { useRouter } from '../utils/index.js'
-
+import { App } from '@capacitor/app';
 
 export default defineComponent({
   name: 'PageScanner',
@@ -27,7 +27,6 @@ export default defineComponent({
     const runtimeSettings = ref('');
     const router = useRouter();
     const { update } = useMutations(['update']);
-    
 
     const onPlayed = (resolution:string) => {
       console.log(resolution);
@@ -39,6 +38,12 @@ export default defineComponent({
         router.go(-1);
       }
     };
+
+    onMounted(() => {
+      App.addListener("backButton",() => {
+        router.go(-1);
+      });
+    });
 
     return {onPlayed, onScanned, torchOn, runtimeSettings};
   }
