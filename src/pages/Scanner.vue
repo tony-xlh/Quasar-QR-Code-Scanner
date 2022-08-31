@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <QRCodeScanner
-      license="DLS2eyJoYW5kc2hha2VDb2RlIjoiMTAxMDc0MDY2LVRYbFhaV0pRY205cVgyUmljZyIsIm9yZ2FuaXphdGlvbklEIjoiMTAxMDc0MDY2IiwiY2hlY2tDb2RlIjotMjY5NjM4MjA1fQ=="
+      license="DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ=="
       :torchOn="torchOn"
       :zoomFactor="zoomFactor"
       :runtimeSettings="runtimeSettings"
