@@ -6,7 +6,7 @@
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { DBR, Options, ScanResult } from "capacitor-plugin-dynamsoft-barcode-reader";
 import { PluginListenerHandle } from "@capacitor/core/";
-const props = defineProps(['license','dceLicense','torchOn','runtimeSettings']);
+const props = defineProps(['license','dceLicense','torchOn','runtimeSettings','zoomFactor']);
 const emit = defineEmits(['onScanned','onPlayed']);
 const initialized = ref(false);
 let currentHeight = 0;
@@ -124,6 +124,12 @@ watch(() => props.torchOn, (newVal, oldVal) => {
   }else{
     DBR.toggleTorch({on:false});
   }
+});
+
+watch(() => props.zoomFactor, async (newVal, oldVal) => {
+  console.log("set zoom: "+newVal);
+  let result = await DBR.setZoom({factor:newVal});
+  console.log(result);
 });
 </script>
 
