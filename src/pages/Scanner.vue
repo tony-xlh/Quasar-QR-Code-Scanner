@@ -65,6 +65,7 @@ export default defineComponent({
     };
 
     const goBack = () => {
+      update([]);
       router.go(-1);
     }
 
