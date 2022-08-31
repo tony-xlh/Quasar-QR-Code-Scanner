@@ -18,9 +18,10 @@
 
 <script lang="ts">
 import { Clipboard } from '@capacitor/clipboard';
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 import { useRouter } from '../utils/index.js'
 import { createNamespacedHelpers } from 'vuex-composition-helpers';
+import { Notify } from 'quasar';
 const { useState } = createNamespacedHelpers('barcodes');
 
 export default defineComponent({
@@ -29,17 +30,20 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const results = useState(["barcodeResults"]);
-    console.log("results");
     console.log(results.barcodeResults.value);
 
     const goScan = async () => {
-      await router.push("/scanner")
+      await router.push('/scanner')
     }
 
     const copy = async (text:string) => {
+      console.log('copy '+text);
       await Clipboard.write({
         string: text
       });
+      Notify.create({
+        message: 'Copied.'
+      })
     }
 
     return {goScan, copy, results};
