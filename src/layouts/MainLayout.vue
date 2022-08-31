@@ -2,17 +2,9 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          aria-label="Menu"
-        />
-
         <q-toolbar-title>
-          Quasar QR Code Scanner
+          QR Code Scanner
         </q-toolbar-title>
-
       </q-toolbar>
     </q-header>
 
