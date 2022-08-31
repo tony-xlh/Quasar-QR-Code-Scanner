@@ -27,6 +27,7 @@ export default defineComponent({
     const runtimeSettings = ref('');
     const router = useRouter();
     const { update } = useMutations(['update']);
+    
 
     const onPlayed = (resolution:string) => {
       console.log(resolution);
