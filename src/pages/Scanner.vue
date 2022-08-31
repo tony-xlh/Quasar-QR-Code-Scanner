@@ -13,6 +13,7 @@
         <q-fab-action @click="toggleTorch" color="blue" icon="flashlight_on" />
         <q-fab-action @click="zoomIn" color="blue" icon="add" />
         <q-fab-action @click="zoomOut" color="blue" icon="remove" />
+        <q-fab-action @click="goBack" color="blue" icon="arrow_back" />
       </q-fab>
     </q-page-sticky>
   </q-layout>
@@ -63,13 +64,17 @@ export default defineComponent({
       zoomFactor.value = zoomFactor.value - 0.3;
     };
 
+    const goBack = () => {
+      router.go(-1);
+    }
+
     onMounted(() => {
       App.addListener("backButton",() => {
         router.go(-1);
       });
     });
 
-    return {onPlayed, onScanned, toggleTorch, zoomIn, zoomOut, torchOn, zoomFactor, runtimeSettings};
+    return {onPlayed, onScanned, goBack, toggleTorch, zoomIn, zoomOut, torchOn, zoomFactor, runtimeSettings};
   }
 });
 
