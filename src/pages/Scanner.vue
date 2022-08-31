@@ -61,7 +61,7 @@ export default defineComponent({
     };
 
     const zoomOut = () => {
-      zoomFactor.value = zoomFactor.value - 0.3;
+      zoomFactor.value = Math.max(zoomFactor.value - 0.3, 1.0);
     };
 
     const goBack = () => {
@@ -69,6 +69,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
+      zoomFactor.value = 1.0;
       App.addListener("backButton",() => {
         router.go(-1);
       });

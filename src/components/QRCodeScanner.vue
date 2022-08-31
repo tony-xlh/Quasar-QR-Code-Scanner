@@ -127,10 +127,9 @@ watch(() => props.torchOn, (newVal, oldVal) => {
 });
 
 watch(() => props.zoomFactor, async (newVal, oldVal) => {
-  console.log("set zoom: "+newVal);
-  let result = await DBR.setZoom({factor:newVal});
-  console.log(result);
+  await DBR.setZoom({factor:newVal});
 });
+
 </script>
 
 <style scoped>
