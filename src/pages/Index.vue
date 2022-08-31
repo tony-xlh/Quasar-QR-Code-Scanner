@@ -2,9 +2,9 @@
   <q-page class="row justify-evenly">
     <div class="full">
       <q-list v-if="results.barcodeResults.value.length>0" dense bordered separator padding class="rounded-borders">
-        <q-item clickable v-ripple v-for="(result, index) in results.barcodeResults.value" :key="index">
+        <q-item @click="copy(result.barcodeText)" clickable v-ripple v-for="(result, index) in results.barcodeResults.value" :key="index">
           <q-item-section>
-            <q-item-label>{{ result.barcodeText }}</q-item-label>
+            <q-item-label :lines="1">{{ result.barcodeText }}</q-item-label>
             <q-item-label caption>{{ result.barcodeFormat }}</q-item-label>
           </q-item-section>
         </q-item>
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-
+import { Clipboard } from '@capacitor/clipboard';
 import { defineComponent, ref } from 'vue';
 import { useRouter } from '../utils/index.js'
 import { createNamespacedHelpers } from 'vuex-composition-helpers';
@@ -36,7 +36,13 @@ export default defineComponent({
       await router.push("/scanner")
     }
 
-    return {goScan, results};
+    const copy = async (text:string) => {
+      await Clipboard.write({
+        string: text
+      });
+    }
+
+    return {goScan, copy, results};
   }
 });
 
